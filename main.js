@@ -414,7 +414,7 @@ function whowin(board,notvirt=1){
         p2start.checked=0
         document.querySelector('#easy').checked=0
         document.querySelector('#hard').checked=0
-        
+        oneOrTwo.style.display="none"
     }
 
     
