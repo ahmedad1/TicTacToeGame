@@ -26,6 +26,10 @@
     .container{
         width: 550px;
     }
+      td{
+        width: calc(100vw/6)!important;
+        height: calc(100vh/6)!important;
+    }
 }
 @media (min-width :768px){
     .container{
