@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="parent">
+        <div class="container">
+            <div class="choose">
+                <span class="cspan">
+
+                    <label >Choose Your Symbol :</label>
+                    <input type="radio" name="xoro" id="x" value="X" >
+                    <label for="x"> X </label>
+                    <input type="radio" name="xoro" id="o" value="O">
+                    <label for="o">O</label>
+                    
+                    
+                </span>
+                
+                <span class='oort'style="display:none">
+                    <input type="radio"id=Onep>
+                    <label for="Onep">1 player </label>  
+                    <input type="radio"id="Twop">
+                    <label for="Twop">2 players</label>
+                </span> 
+                <span class="level"style="display: none;">
+                    <input type="radio"id=easy>
+                    <label for="easy">Easy </label>  
+                    <input type="radio"id="hard">
+                    <label for="hard">Impossible</label>
+                    </span>
+                
+                <span class="starter"style='display:none;'>
+                    <label >Who will start:</label>
+                    <input type="radio"  id="p1">
+                    <label for="p1">You</label>
+                    <input type="radio"id='p2'>
+                    <label for="p2">Opponent</label>
+                </span>
+                
+               
+                
+            </div>
+
+            <span class="final"style="display:none">
+            <p class="choosed"style="margin-top:30px"></p>
+            <br>
+            <p class="curlevel" style="text-align: center;font-family: fangsong;"></p>
+            <br>
+            <p class="gamestarted"style='display:none;    text-align: center; font-family: auto;'>Game Started</p>
+            <br>
+            <p class="winner" style="text-align: center;"></p>
+            </span>
+            
+            <table>
+                <tr> <td onclick="paint(0)"></td><td onclick="paint(1)"></td><td onclick="paint(2)"></td></tr>
+                <tr> <td onclick="paint(3)"></td><td onclick="paint(4)"></td><td onclick="paint(5)"></td></tr>
+                <tr> <td onclick="paint(6)"></td><td onclick="paint(7)"></td><td onclick="paint(8)"></td></tr>
+
+            </table>
+
+        </div>
+        <button class="again"> Play Again </button>
+
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
