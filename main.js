@@ -4,16 +4,18 @@ let y=document.createElement('p');
 let o=document.createElement('p');
 let choose=document.querySelector('.choose')
 let addedp=document.querySelector('.container .winner')
-let playagain=document.querySelector('.again')
+let newgame=document.querySelector('.newgame')
 let playerx=document.querySelector('#x');
 let playero=document.querySelector('#o');
 let choosed=document.querySelector('.choosed')
 let p1start=document.querySelector('#p1')
 let p2start=document.querySelector('#p2')
+let playagain=document.querySelector('.playagain')
 o.style="width:66px;height: 80%;margin:auto;border-radius:50%;border:solid"
 x.style="width:2px;height:100%;background:black;transform:rotatez(45deg);margin:auto;position:absolute;left:50%";
 y.style="width:2px;height:103%;background:black;transform:rotatez(-45deg);margin:auto"
 let xo=-1;
+
 let oneOrTwo=document.querySelector('span.oort')
 let oneplayer=document.querySelector('#Onep')
 let twoplayers=document.querySelector('#Twop')
@@ -23,7 +25,7 @@ let game=new Array(9).fill(undefined);
 let finish=0;
 let player1=null;
 let player2=null;
-//let whostartshtml=``
+let whostart=-1
 let level=null
 playerx.onchange=()=>{
    // xo=1;
@@ -76,6 +78,7 @@ twoplayers.onchange=()=>{
 p1start.onchange=()=>{
 if ((player1!=null && level!=null&&multiplayers==0)||(player1!=null && level==null&&multiplayers==1)){
     xo=player1
+    whostart=xo
     document.querySelector('.starter').style.display='None'
     document.querySelector('.gamestarted').style.display='block'
     choosed.innerHTML=player1==1?`You : X &nbsp&nbsp&nbsp oppenent: O`: `You : O &nbsp&nbsp&nbsp oppenent: X `
@@ -94,6 +97,7 @@ if ((player1!=null && level!=null&&multiplayers==0)||(player1!=null && level==nu
 p2start.onchange=()=>{
     if ((player2!=null && level!=null&&multiplayers==0)||(player2!=null && level==null&&multiplayers==1)){
         xo=player2
+        whostart=xo
         document.querySelector('.starter').style.display='None'
         document.querySelector('.gamestarted').style.display='block'
         choosed.innerHTML=player2==1?`You : O &nbsp&nbsp&nbsp oppenent: X`: `You : X &nbsp&nbsp&nbsp oppenent: O `
@@ -387,7 +391,7 @@ function whowin(board,notvirt=1){
             }
            }
     }
-    playagain.onclick=()=>{
+    newgame.onclick=()=>{
         finish=0;
         player1=null
         player2=null
@@ -402,6 +406,7 @@ function whowin(board,notvirt=1){
         xo=-1;
         player1=undefined
         game=new Array(9).fill(undefined);
+        multiplayers=0
         choose.style.display='block'
         document.querySelector('.cspan').style.display='block'
         document.querySelector('.final').style.display='none'
@@ -417,8 +422,26 @@ function whowin(board,notvirt=1){
         oneOrTwo.style.display="none"
         document.querySelector('.starter').style.display='none'
         document.querySelector('.level').style.display='none'
-        multiplayers=0
+        whostart=-1
     }
 
-    
+    playagain.onclick=()=>{
+        if (whostart==-1)
+        return
+        game=new Array(9).fill(undefined);
+        finish=0;
+        arr=[0,0,0,0,0,0,0,0,0];
+        for(let i of td){
+            i.innerHTML=''
+            i.style='background:transparent'
+        }
+        addedp.innerText=''
+        
+        xo=whostart
+        if (multiplayers==0&&whostart==player2){
+            
+            paint(parseInt(Math.abs(Math.random()*10)-1))
+
+        }
+    }
 
