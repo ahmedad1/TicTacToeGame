@@ -417,6 +417,7 @@ function whowin(board,notvirt=1){
         oneOrTwo.style.display="none"
         document.querySelector('.starter').style.display='none'
         document.querySelector('.level').style.display='none'
+        multiplayers=0
     }
 
     
