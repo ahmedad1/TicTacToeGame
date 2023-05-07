@@ -159,11 +159,18 @@ function minimize(arr){
     else return Math.min(...arr)
 }
 
-
+function shuffle(a){
+    let g=null
+    for(let i=0;i<a.length ;i++){
+         g=parseInt(Math.random()*10)%a.length;
+        [a[i],a[g]]=[a[g],a[i]]
+    }
+}
 function minmax(board,curplayer){
     let m=[];
     let score=null
     let rest=avail(board);
+    shuffle(rest)
     for ( let i of rest ){
         board[i]=curplayer
         score= whowinval(board)
