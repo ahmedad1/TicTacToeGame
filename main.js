@@ -367,7 +367,7 @@ function whowin(board,notvirt=1){
             addedp.innerText='No player Won'
             
            }
-          
+           if (finish) return
            if (!multiplayers){
             if (level=='easy'){
                 if (xo==player2){
