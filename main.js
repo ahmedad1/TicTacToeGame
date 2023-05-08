@@ -170,6 +170,7 @@ function minmax(board,curplayer){
     let m=[];
     let score=null
     let rest=avail(board);
+    if (whostart==player1)
     shuffle(rest)
     for ( let i of rest ){
         board[i]=curplayer
