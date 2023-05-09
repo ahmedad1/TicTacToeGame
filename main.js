@@ -11,9 +11,9 @@ let choosed=document.querySelector('.choosed')
 let p1start=document.querySelector('#p1')
 let p2start=document.querySelector('#p2')
 let playagain=document.querySelector('.playagain')
-o.style="width:66px;height: 80%;margin:auto;border-radius:50%;border:solid"
-x.style="width:2px;height:100%;background:black;transform:rotatez(45deg);margin:auto;position:absolute;left:50%";
-y.style="width:2px;height:103%;background:black;transform:rotatez(-45deg);margin:auto"
+o.style="width:9.9vh;height: 11.45vh;margin:auto;border-radius:50%;border:solid"
+x.style="width:2px;height:14.5vh;background:black;transform:rotatez(45deg);margin:auto;position:absolute;left:50%";
+y.style="width:2px;height:14.5vh;background:black;transform:rotatez(-45deg);margin:auto"
 let xo=-1;
 
 let oneOrTwo=document.querySelector('span.oort')
