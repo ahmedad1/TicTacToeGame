@@ -31,10 +31,7 @@
     .container{
         width: 550px;
     }
-    td{
-        width: calc(100vw/6)!important;
-        height: calc(100vh/6)!important;
-    }
+  
 }
 @media (min-width :768px){
     .container{
@@ -58,8 +55,8 @@ table{
     
 }
 td{
-    width: calc(100%/3);
-    height: calc(100%/3);
+    width: calc(100vw/6)!important;
+    height: calc(100vh/6)!important;
     border: solid 1px;
     cursor: pointer;
     box-sizing: border-box;
