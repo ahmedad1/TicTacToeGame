@@ -172,6 +172,11 @@ function minmax(board,curplayer){
     let rest=avail(board);
     if (whostart==player1)
     shuffle(rest)
+     else{
+            if (rest.length==7){
+                shuffle(rest)
+            }
+        }
     for ( let i of rest ){
         board[i]=curplayer
         score= whowinval(board)
